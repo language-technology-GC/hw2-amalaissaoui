@@ -1,0 +1,27 @@
+Part 1: Environment preparation
+I did not have any problems or difficulty running the pip command to install fairseq
+
+Part 2: Preprocessing
+I found this part very enjoyable. The instructions were very clear. I defined a function
+that takes a file (training, dev, or testing) and writes spelling and trancriptions to two
+files.
+I created a grapheme list then looped over every item and used chain.from_iterable(), turned
+the output of chain.from_iterable() into a list, and joined the list using " ".join(). 
+
+Part 3: Training
+Part 3 was difficult and confusing to me. I managed to find the commands but I am not confident
+I can do this on my own for another project. I am still confused about the commands and what each
+command does and when to use it. The documentation was not easy to read. I understand why I used 
+the LSTM, bidirectional encoder, learning rate, optimizer, and batch size commands. For the rest 
+of the commands, I really have no idea what they mean. 
+
+Part 4: Evaluation
+This part was also very enjoyable. I followed the same strategy in the evaluation.py file we saw
+in the demos in class. To process the predictions.txt file, I looked for the lines starting with 
+T- and H- the split them using .split("\t) then appended the last item (the transcription) to a 
+either a target or hypo list. I realize that I could have done this with regex, but I admit that  
+regex are one of my weak spots in programming that I need to work on more. 
+
+I compared the list of targets with the list of hypotheses and incremented the variable incorrect
+every time the items do not match. Then I divided the integer stored in that variable by the number 
+of examples and multiplied by 100. I got a WER of 16.0%
